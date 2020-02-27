@@ -86,7 +86,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Airthmetic operators \+, \-, \*, \\</string>
+			<string>Arithmetic operators \+, \-, \*, \\</string>
 			<key>match</key>
 			<string>\+|\-|\*|\/|\%</string>
 			<key>name</key>
@@ -96,7 +96,7 @@
 			<key>comment</key>
 			<string>Registers like r0, r1, r10</string>
 			<key>match</key>
-			<string>\b(r[0-9]|r10|I[0-7]|L[0-1,4-5]|M[1-3]|B[0-5]|rMAC|rMAC2|rMAC12|rMAC0|DoLoopStart|DOLoopEnd|DivResult|DivRemainder|rMACB2|rMACB12|rMACB0|Null|rLink|rFlags|rMACB|)\b</string>
+			<string>\b(r[0-9]|r10|I[0-7]|l[0-1,4-5]|L[0-1,4-5]|m[1-3]|M[1-3]|b[0-5]|B[0-5]|rMAC|rMAC2|rMAC12|rMAC0|DoLoopStart|DOLoopEnd|DivResult|DivRemainder|rMACB2|rMACB12|rMACB0|Null|rLink|rFlags|rMACB|)\b</string>
 			<key>name</key>
 			<string>variable.parameter.register.kal</string>
 		</dict>
@@ -136,9 +136,33 @@
 			<key>comment</key>
 			<string>Variable types .VAR and .CONST</string>
 			<key>match</key>
+			<string>(\.var(\/dm([1-2])?circ|\/dm[1-2]|16|8)?|\.const|\.block|\.endblock)</string>
+			<key>name</key>
+			<string>storage.modifier.variableType.lower.kal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Variable types .VAR and .CONST</string>
+			<key>match</key>
 			<string>(\.VAR(\/DM([1-2])?CIRC|\/DM[1-2]|16|8)?|\.CONST|\.BLOCK|\.ENDBLOCK)</string>
 			<key>name</key>
 			<string>storage.modifier.variableType.kal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Modules/Segments</string>
+			<key>match</key>
+			<string>\.(module|endmodule|codesegment|datasegment)</string>
+			<key>name</key>
+			<string>storage.module.segments.lower.kal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Modules/Segments</string>
+			<key>match</key>
+			<string>\.(MODULE|ENDMODULE|CODESEGMENT|DATASEGMENT)</string>
+			<key>name</key>
+			<string>storage.module.segments.kal</string>
 		</dict>
 		<dict>
 			<key>begin</key>
